@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layout_width="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".EyeActivity">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/toollbar_add" />
+
+        <EditText
+            android:id="@+id/edit_purpose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/purpose_name"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/text_add"
+            android:layout_width="0dp"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:text="@string/add_text"
+            android:textColor="@color/text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/edit_purpose"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/edit_purpose"
+            app:layout_constraintTop_toBottomOf="@+id/edit_purpose"
+            app:layout_constraintVertical_bias="0.033" />
+
+        <EditText
+            android:id="@+id/edit_add"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="12dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:background="@drawable/edit_text"
+            android:paddingStart="5dp"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="@+id/edit_purpose"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="@+id/edit_purpose"
+            app:layout_constraintTop_toBottomOf="@+id/text_add"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/text_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="20sp"
+            android:text="@string/add_photo"
+            app:layout_constraintEnd_toEndOf="@+id/edit_add"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/edit_add"
+            app:layout_constraintTop_toBottomOf="@+id/edit_add"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/image_photo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/photo_content"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/text_photo"
+            app:layout_constraintTop_toBottomOf="@+id/text_photo"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@android:drawable/ic_menu_camera" />
+
+        <EditText
+            android:id="@+id/text_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/percents"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/image_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.69"
+            app:layout_constraintStart_toEndOf="@+id/image_photo"
+            app:layout_constraintTop_toTopOf="@+id/image_photo" />
+
+        <LinearLayout
+            android:id="@+id/linear_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="260dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/image_photo"
+            app:layout_constraintTop_toBottomOf="@+id/image_photo"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/image_add_task"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:contentDescription=" "
+                android:background="@drawable/selector_imageadd"
+                app:srcCompat="@drawable/plus"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/text_add_task"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:text="@string/add_task"
+                android:paddingStart="10dp"
+                android:textSize="20sp"
+                android:layout_weight="1"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/list_task"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/linear_add"
+            app:layout_constraintStart_toStartOf="@+id/linear_add"
+            app:layout_constraintTop_toBottomOf="@+id/linear_add" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="%"
+            android:textSize="24sp"
+            android:enabled="false"
+            app:layout_constraintBottom_toBottomOf="@+id/text_percent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.16"
+            app:layout_constraintStart_toEndOf="@+id/text_percent"
+            app:layout_constraintTop_toTopOf="@+id/text_percent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
